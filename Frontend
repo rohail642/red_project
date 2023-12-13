@@ -1,0 +1,532 @@
+//Frontend for landing page 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        nav {
+            background-color: #DC143C;
+            color: white;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            animation: fadeInDown 0.8s;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 10px;
+            padding: 10px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        /* nav a:hover {
+            /* color: #DC143C; */
+
+        /* } */ 
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10px;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 3px;
+            background-color: white;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+
+        .nav-menu {
+            display: flex;
+            flex-grow: 1;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            display: block;
+            padding: 10px;
+        }
+
+        .nav-menu a:hover{
+            background-color: #DC143C;
+        }
+
+        .landing-section {
+        background: url('https://ik.imagekit.io/hbd8egryz/Smart%20INDIA%20Hackathon/vibrant-silk-fashion-yellow-pink-abstract-elegance-generated-by-artificial-intelligence.jpg?updatedAt=1702371997132') center/cover no-repeat;
+        background-size:cover;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: rgba(255, 255, 255, 0); 
+        }
+
+        .card {
+        position: relative;
+        max-width: 100%;
+        width: 40%;
+        height: 25vh;
+        display: flex;
+        left: 25%;
+        bottom: 25%;
+        }
+
+        img, video {
+        max-width: 100%;
+        height: 55%;
+        display: flex;
+        position: absolute;
+        top: 4%;
+        left: 2%;
+        mix-blend-mode: multiply;
+        }
+
+        .landing-section-title {
+        color: #DC143C;
+        font-weight: bold;
+        font-size: 9rem;
+        animation: fadeIn ease-in-out 1;
+        animation-fill-mode: forwards;
+        animation-duration: 1s;
+        position: absolute ;
+        left: 1%;
+        }
+
+        .landing-section-subtitle {
+            color: #000000;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeIn ease-in-out 1;
+            animation-fill-mode: forwards;
+            animation-duration: 1s;
+            animation-delay: 0.5s;
+            margin-top: 0%;
+            margin-left: 0%;
+            width: 50%;
+            position: absolute;
+            top: 50%;
+            left: 43%;
+        }
+
+        .scroll-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            justify-content: space-between;
+            text-align: center;
+            position: relative;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .horizontal-scroll {
+            overflow-x: auto;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            scroll-snap-type: x proximity;
+            padding: 20px 0;
+            
+        }
+
+        .horizontal-scroll div {
+            min-width: 100%;
+            height: 500px;
+            box-sizing: border-box;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #110505;
+            border-radius: 8px;
+            margin: 0 10px;
+            transition: transform 0.3s ease;
+            scroll-snap-align: center;
+            transform-origin: center center;
+            white-space: normal; /* Use overflow-wrap instead of word-wrap */
+        }
+
+        .horizontal-scroll div p {
+            text-align: center;
+            font-size: 100%; /* Add this line to align the text in the center */
+        }
+
+
+        .horizontal-scroll div:first-child {
+            margin-left: 20px;
+        }
+
+        .horizontal-scroll div:last-child {
+            margin-right: 20px;
+        }
+
+        .horizontal-scroll div:nth-child(1) {
+            background: url('https://ik.imagekit.io/hbd8egryz/Smart%20INDIA%20Hackathon/Images/luxurious-bluebowed-gift-box-monochromatic-dark-blue-ideal-celebratory-occasions.jpg?updatedAt=1702289686275') center/cover no-repeat;
+            background-size: cover;
+        }
+        
+        .horizontal-scroll div:nth-child(2) {
+            background: url('https://ik.imagekit.io/hbd8egryz/Smart%20INDIA%20Hackathon/Images/modern-monitor-elegant-table.jpg?updatedAt=1702289689968') center/cover no-repeat;
+            background-size: cover;
+        }
+
+        .horizontal-scroll div:nth-child(3) {
+            background: url('https://ik.imagekit.io/hbd8egryz/Smart%20INDIA%20Hackathon/Images/doctor-is-seen-writing-notes-clipboard-welllit-hospital-corridor-with-plenty-space-additional-information.jpg?updatedAt=1702289685188') center/cover no-repeat;
+            background-size: cover;
+        }
+
+        .horizontal-scroll div:nth-child(4) {
+            background: url('https://ik.imagekit.io/hbd8egryz/Smart%20INDIA%20Hackathon/Images/young-adult-business-person-working-late-listening-generated-by-ai.jpg?updatedAt=1702385360643') center/cover no-repeat;
+            background-size: cover;
+        }
+
+        .horizontal-scroll div:nth-child(4) {
+            background: url('https://ik.imagekit.io/hbd8egryz/Smart%20INDIA%20Hackathon/Images/young-adult-business-person-working-late-listening-generated-by-ai.jpg?updatedAt=1702385360643') center/cover no-repeat;
+            background-size: cover;
+        }
+
+        .horizontal-scroll div:nth-child(5) {
+            background: url('https://ik.imagekit.io/hbd8egryz/Smart%20INDIA%20Hackathon/Images/view-3d-cinema-elements.jpg?updatedAt=1702289687641') center/cover no-repeat;
+            background-size: cover;
+        }
+
+        .horizontal-scroll div:nth-child(6) {
+            background: url('https://ik.imagekit.io/hbd8egryz/Smart%20INDIA%20Hackathon/Images/3d-smartphone-device-with-map-gps-technology.jpg?updatedAt=1702289688325') center/cover no-repeat;
+            background-size: cover;
+        }
+
+        .horizontal-scroll div:nth-child(6) {
+            background: url('https://ik.imagekit.io/hbd8egryz/Smart%20INDIA%20Hackathon/Images/modern-office-building-features-luxury-skyline-view-generated-by-ai.jpg?updatedAt=1702289691206') center/cover no-repeat;
+            background-size: cover;
+        }
+
+        .arrow-btn {
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 24px;
+        }
+
+        .big-button {
+            background-color: #DC143C;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .big-button:hover {
+            background-color: #880808;
+        }
+
+        .login-signup {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            opacity: 1; /* Initially visible */
+            transition: opacity 0.5s ease;
+            letter-spacing: 4px;
+            margin-right: 10%;
+            
+        }
+
+        .login-signup a {
+            color: #333;
+            margin: 0 0 10px;
+            padding: 12px 60px;
+            background-color: #DC143C;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-signup a:hover {
+            background-color: #880808;
+        }
+
+        .hidden {
+            opacity: 0; 
+            pointer-events: none; 
+        }
+
+     
+        .fade-in{
+            opacity: 0;
+            animation: fadeIn ease-in-out 1;
+            animation-fill-mode: forwards;
+            animation-duration: 1s;
+            /* background-image: url(https://ik.imagekit.io/hbd8egryz/Smart%20INDIA%20Hackathon/4274784.jpg?updatedAt=1701854170758);
+            background-position: center;
+            background-size: cover;
+            height: ;
+            margin-bottom: 10%; */
+        }
+
+        .fade-in a{
+            background-color: #DC143C;
+            margin: 30%;
+            display: flex;
+            justify-content: center;
+            align-content: end;
+            margin-bottom : 10%
+        }
+
+        footer {
+            background-color: rgba(51, 51, 51, 0.7);
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 0%;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Custom animation for the navbar */
+        @keyframes fadeInDown {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive styles */
+        @media(max-width: 768px) {
+            nav .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: #333;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .landing-section-title{
+                margin-left: 4%;
+                margin-top: 25%;
+            }
+
+            .landing-section-subtitle {
+                margin-top: 36%;
+                margin-left: 17%;/* Adjust the top margin for smaller screens */
+            }
+
+            .nav-menu a {
+                padding: 15px;
+                text-align: center;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .login-signup {
+                bottom: 20px;
+                right: 20px;
+                opacity: 1; /* Initially hidden */
+            }
+
+
+            img{
+                opacity: 0;
+            }
+
+            .horizontal-scroll{
+                flex-direction:row;
+                align-items:flex-start;
+                overflow-y:scroll ;
+            }
+
+            .horizontal-scroll div {
+                 width: 100%; /* Make each item full-width */
+                margin: 0; /* Remove margin */
+                padding: 20px; /* Adjust padding as needed */
+                text-align: center; 
+            }
+
+            .fade-in p {
+                width: 100%;
+            }
+
+            .fade-in a {
+                margin: 10px 0; /* Adjust margin for buttons */
+            }
+
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="py-4">
+    <div class="container mx-auto flex items-center justify-between">
+        <div class="flex items-center">
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="nav-menu">
+                <a href="#" class="hover:text-green-500">GAME</a>
+                <a href="#" class="hover:text-green-500">REDEEM</a>
+                <a href="#" class="hover:text-green-500">TRACKER</a>
+                <a href="#" class="hover:text-green-500">CHAT WITH EXPERTS</a>
+                <a href="#" class="hover:text-green-500">EPISODE FORUM</a>
+                <a href="#" class="hover:text-green-500">CURATED PLAYLISTS</a>
+                <a href="#" class="hover:text-green-500">NEARBY STORES</a>
+                <a href="#" class="hover:text-green-500">ABOUT US</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<section class="landing-section bg-gray-100">
+    <div class="card">
+        <div class="landing-section-title">RED</div>
+        <div class="landing-section-subtitle">EMBRACE THE FLOW</div>
+    </div>
+        <img src="https://ik.imagekit.io/hbd8egryz/Smart%20INDIA%20Hackathon/4274784.png?updatedAt=1702289929711">
+        <!-- <div class="container mx-auto">
+        <h1 class="text-4xl font-bold mb-4">THIS IS RED</h1>
+        <p class="text-lg text-gray-700 mb-8">.</p>
+        <a href="#" class="bg-green-500 text-white px-6 py-3 rounded transition duration-300 hover:bg-green-600">Get Started</a>
+    </div> -->
+</section>
+
+<!-- Scroll Section -->
+<section class="scroll-section bg-white">
+    <div class="container mx-auto">
+        <div class="big-button mb-6">DOWNLOAD GAME</div>
+        <div class="horizontal-scroll">
+            <div class="fade-in">
+                <p>Win coupons that you have won in game for real life products!</p>
+                <a href="#" class="bg-green-500 text-white px-4 py-2 rounded mt-4">Redeem</a>
+            </div>
+            <div class="fade-in">
+                <p>Any menstruation app is incomplete without a period tracker, use RED's own native period tracker for better planning.</p>
+                <a href="#" class="bg-green-500 text-white px-4 py-2 rounded mt-4">Period Tracker</a>
+            </div>
+            <div class="fade-in">
+                <p>Need expert advice but are too shy to ask? This section is for you!</p>
+                <a href="#" class="bg-green-500 text-white px-4 py-2 rounded mt-4">Chat with experts</a>
+            </div>
+            <div class="fade-in">
+                <p>Want to share any peculiar experience that stands out but teaches something? Post your experience completely ANONYMOUSLY for it to be converted into a future episode.</p>
+                <a href="#" class="bg-green-500 text-white px-4 py-2 rounded mt-4">The Episode Forum</a>
+            </div>
+            <div class="fade-in">
+                <p>Watch state of the art videos, each of which focus on certain topics curated by our in-house experts</p>
+                <a href="#" class="bg-green-500 text-white px-4 py-2 rounded mt-4">Curated Playlists</a>
+            </div>
+            <div class="fade-in">
+                <p>Check out the nearby Pharmacy stores incase of emergency!</p>
+                <a href="#" class="bg-green-500 text-white px-4 py-2 rounded mt-4">Go to stores</a>
+            </div>
+            <div class="fade-in">
+                <p>Click to know </p>
+                <a href="#" class="bg-green-500 text-white px-4 py-2 rounded mt-4">About us</a>
+            </div>
+        </div>
+        <div class="arrow-btn">&#8594;</div>
+    </div>
+    <footer>
+        <p>©red | vanamalisedimbi@gmail.com | 8618814704</p>
+    </footer>
+</section>
+
+<!-- Login and Signup Buttons -->
+<div class="login-signup hidden">
+    <a href="#" class="text-white">LOGIN</a>
+    <a href="#" class="text-white">SIGN UP</a>
+</div>
+
+<!-- Additional sections and content go here -->
+
+<script>
+    // JavaScript for handling horizontal scroll and arrow button click
+    const scrollContainer = document.querySelector('.horizontal-scroll');
+    const arrowButton = document.querySelector('.arrow-btn');
+    const loginSignup = document.querySelector('.login-signup');
+
+    arrowButton.addEventListener('click', () => {
+        scrollContainer.scrollBy({
+            left: window.innerWidth,
+            behavior: 'smooth',
+        });
+    });
+
+    // JavaScript for toggling the responsive menu
+    function toggleMenu() {
+        const navMenu = document.querySelector('.nav-menu');
+        navMenu.classList.toggle('active');
+    }
+
+    // JavaScript for showing/hiding login and signup buttons based on scroll
+    window.addEventListener('scroll', () => {
+        const scrollPosition = window.scrollY;
+
+        // Set a threshold value based on your layout
+        const threshold = 200;
+
+        if (scrollPosition > threshold) {
+            loginSignup.classList.add('hidden');
+        } else {
+            loginSignup.classList.remove('hidden');
+        }
+    });
+</script>
+
+</body>
+</html>
