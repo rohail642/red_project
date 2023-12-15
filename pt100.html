@@ -1,0 +1,91 @@
+{% extends "base.html" %} {% block title %}PT100{% endblock %} {% block content
+%}
+<head>
+<meta http-equiv="refresh" content="0.5">
+</head>
+<br>
+<br>
+<br>
+<br>
+<div class='box'>
+
+<section>
+
+<h1>Temperture Measurements from PT100</h1>
+ <table>
+  <col width ="200">
+  <col width ="60">
+  <col width ="40">
+
+  <th align="left">parameter</th>
+  <th align="left">value</th>
+  <th align="left">unit</th>
+  <tr>
+     <td>Lubrication oil hot</td>
+     <td>{{temperature_Ch0}}</td>
+     <td>degC</td>
+
+  </tr>
+  <tr>
+     <td>Lubrication oil Cold</td>
+     <td>{{temperature_Ch1}}</td>
+     <td>degC</td>
+
+  </tr>
+  <tr>
+     <td>Lubrication oil Bypass</td>
+     <td>{{temperature_Ch2}}</td>
+     <td>degC</td>
+
+  </tr>
+  <tr>
+     <td>Lubrication Cooler Inlet</td>
+     <td>{{temperature_ambient}}</td>
+     <td>degC</td>
+
+  </tr>
+  <tr>
+     <td>Lubrication Cooler Outlet</td>
+     <td>{{temperature_Ch3}}</td>
+     <td>degC</td>
+
+  </tr>
+  <tr>
+     <td>Compressed air hot</td>
+     <td>{{temperature_Ch4}}</td>
+     <td>degC</td>
+
+  </tr>
+  <tr>
+     <td>Compressed air cold</td>
+     <td>{{temperature_Ch5}}</td>
+     <td>degC</td>
+
+  </tr>
+  <tr>
+     <td>Compressed air cooler inlet</td>
+     <td>{{temperature_ambient}}</td>
+     <td>degC</td>
+
+  </tr>
+  <tr>
+     <td>Compressed air cooler inlet</td>
+     <td>{{temperature_Ch6}}</td>
+     <td>degC</td>
+
+  </tr>
+  <tr>
+     <td>Drive Motor</td>
+     <td>{{temperature_Ch7}}</td>
+     <td>degC</td>
+
+  </tr>
+ </table>
+
+
+<br>
+
+</section>
+</div>
+
+{% endblock %}

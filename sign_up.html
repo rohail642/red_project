@@ -1,0 +1,46 @@
+
+{% extends "extending.html" %} {% block title %}Sign Up{% endblock %} {% block
+content %}
+  <div class="wrapper">
+<form method="POST">
+      <h2>Signup</h2>
+        <div class="input-field">
+        <input type="email" required
+        id = "email"
+        name = "email">
+        <label>Enter your email</label>
+      </div>
+      <div class="input-field">
+        <input type="text" required
+        id = "username"
+        name = "username">
+        <label>Enter your username</label>
+      </div>
+      <div class="input-field">
+        <input type="password" required
+        id = "password1"
+        name = "password1">
+        <label>Enter your password</label>
+      </div>
+      <div class="input-field">
+        <input type="password" required
+        id = "password2"
+        name = "password2">
+        <label>Enter your password again</label>
+      </div>
+      <div class="forget">
+        <label for="remember">
+          <input type="checkbox" id="remember">
+          <p>Remember me</p>
+        </label>
+        <a href="#">Forgot password?</a>
+      </div>
+      <button type="submit">Sign In</button>
+      <div class="register">
+        <p>Don't have an account? <a href="/login">Login</a></p>
+      </div>
+  </form>
+  </div>
+  {%endblock%}
+
+
