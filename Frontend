@@ -130,41 +130,41 @@
        }
 
 
-    .landing-section-title {
-    color: #DC143C;
-    font-family: 'Saira Condensed', sans-serif;
-    font-weight: bold;
-    font-size: 12rem;
-    animation: fadeIn ease-in-out 1;
-    animation-fill-mode: forwards;
-    animation-duration: 1s;
-    position: absolute;
-    right: 70%;
-    top: 0%;
-    z-index: 1; /* Ensure the text appears above the background */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add a subtle text shadow */
-    }
+        .landing-section-title {
+        color: #DC143C;
+        font-family: 'Saira Condensed', sans-serif;
+        font-weight: bold;
+        font-size: 12rem;
+        animation: fadeIn ease-in-out 1;
+        animation-fill-mode: forwards;
+        animation-duration: 1s;
+        position: absolute;
+        right: 70%;
+        top: 0%;
+        z-index: 1; /* Ensure the text appears above the background */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add a subtle text shadow */
+        }
 
 
-    .landing-section-subtitle {
-    color: #000000;
-    font-family: 'Saira Condensed', sans-serif; /* Change the font if needed */
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    opacity: 0;
-    animation: fadeIn ease-in-out 1;
-    animation-fill-mode: forwards;
-    animation-duration: 1s;
-    animation-delay: 0.5s;
-    margin-top: 0%;
-    margin-left: 0%;
-    width: 50%;
-    position: absolute;
-    top: 53%;
-    left: 15%;
-    z-index: 1; /* Ensure the text appears above the background */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Add a subtle text shadow */
-    }
+        .landing-section-subtitle {
+        color: #000000;
+        font-family: 'Saira Condensed', sans-serif; /* Change the font if needed */
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        opacity: 0;
+        animation: fadeIn ease-in-out 1;
+        animation-fill-mode: forwards;
+        animation-duration: 1s;
+        animation-delay: 0.5s;
+        margin-top: 0%;
+        margin-left: 0%;
+        width: 50%;
+        position: absolute;
+        top: 53%;
+        left: 15%;
+        z-index: 1; /* Ensure the text appears above the background */
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Add a subtle text shadow */
+        }
 
         @keyframes fadeIn {
             0% {
@@ -257,21 +257,22 @@
         }
 
         .horizontal-scroll div:nth-child(1) {
-        background: url('https://ik.imagekit.io/hbd8egryz/Smart%20INDIA%20Hackathon/Images%202/minimal-scene-with-gift-pastel-colors.jpg?updatedAt=1702471415928') center/cover no-repeat;
-        background-size: cover;
-        border-radius: 20px;
-        box-shadow: 0px 0px 6px 0px black;
-        text-align: left;
-        padding: 20px; /* Add some padding for better readability */
-        position: relative;
+            background: url('https://ik.imagekit.io/hbd8egryz/Smart%20INDIA%20Hackathon/Images%202/minimal-scene-with-gift-pastel-colors%20(2).jpg?updatedAt=1702566306446') center/cover no-repeat;
+            background-size: cover;
+            border-radius: 20px;
+            box-shadow: 0px 0px 6px 0px black;
+            text-align: left;
+            padding: 20px; /* Add some padding for better readability */
+            position: relative;
         }
 
         .horizontal-scroll div:nth-child(1) p {
             text-align: start;
             font-size: 1.8rem; /* Increase font size */
-            color: #fff; /* Set font color to white for better contrast */
+            color: #fff; /* Adjust the shade as needed */
             font-weight: bold; /* Add bold style */
-            margin-bottom: 20px; /* Add margin to separate from the button */
+            margin-bottom: 20px;
+            text-shadow: 4px 4px 8px rgba(0.5, 0, 0, 0.5); /* Add margin to separate from the button */
         }
 
         .horizontal-scroll div:nth-child(1) a {
@@ -299,74 +300,136 @@
             border-radius: 20px;
         }
 
-        
         .horizontal-scroll div:nth-child(2) {
-            background: url('https://ik.imagekit.io/hbd8egryz/Smart%20INDIA%20Hackathon/Images%202/portrait-good-looking-feminine-girl-has-afro-hairstyle-holds-monthly-calendar-clean-sanitary-napkin.jpg?updatedAt=1702471416584') center/cover no-repeat;
+            background: url('https://ik.imagekit.io/hbd8egryz/Smart%20INDIA%20Hackathon/Images%202/portrait-good-looking-feminine-girl-has-afro-hairstyle-holds-monthly-calendar-clean-sanitary-napkin%20(1).jpg?updatedAt=1702566306867') center/cover no-repeat;
             background-size: cover;
-            background-position: top;
             border-radius: 20px;
+            background-position: top;
+            text-align: left;
+            position: relative;
             box-shadow: 0px 0px 6px 0px black;
         }
 
         .horizontal-scroll div:nth-child(2) p{
             text-align: start;
             font-size: 1.5rem;
+            color: #fff;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 4px 4px 8px rgba(0.5, 0, 0, 0.5);
         }
 
         .horizontal-scroll div:nth-child(2) a{
             position: relative;
-            display: flex;
-            justify-content: center;
-            top: 80%;
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 8px;
+            color: #fff;
             background-color: #DC143C;
-            max-width: 200px;
-            margin: auto;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .horizontal-scroll div:nth-child(2) a:hover {
+            background-color: #880808;
+        }
+
+        .horizontal-scroll div:nth-child(2)::before {
+            content: ''; /* Create a pseudo-element for the overlay */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
         }
 
         .horizontal-scroll div:nth-child(3) {
             background: url('https://ik.imagekit.io/hbd8egryz/Smart%20INDIA%20Hackathon/Images%202/front-view-young-female-doctor-white-suit-with-blue-stethoscope-posing-smiling-pink-space-medicine-medical-hospital.jpg?updatedAt=1702471416342') center/cover no-repeat;
             background-size: cover;
-            background-position: top;
             border-radius: 20px;
             box-shadow: 0px 0px 6px 0px black;
+            text-align: left;
+            padding: 20px; /* Add some padding for better readability */
+            position: relative;
         }
 
         .horizontal-scroll div:nth-child(3) p{
             text-align: start;
-            font-size: 1.5rem;
+            font-size: 1.8rem; /* Increase font size */
+            color: #fff; /* Set font color to white for better contrast */
+            font-weight: bold; /* Add bold style */
+            margin-bottom: 20px;
+            text-shadow: 4px 4px 8px rgba(0.5, 0, 0, 0.5); /* Add margin to separate from the button */
         }
 
         .horizontal-scroll div:nth-child(3) a{
             position: relative;
-            display: flex;
-            justify-content: center;
-            top: 80%;
+            display: inline-block; /* Change to inline-block for better centering */
+            padding: 10px 20px; /* Add padding to the button */
             background-color: #DC143C;
-            max-width: 200px;
-            margin: auto;
+            color: #fff; /* Set text color to white */
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .horizontal-scroll div:nth-child(3) a:hover {
+            background-color: #880808;
+        }
+
+        .horizontal-scroll div:nth-child(3)::before {
+            content: ''; /* Create a pseudo-element for the overlay */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
         }
 
         .horizontal-scroll div:nth-child(4) {
             background: url('https://ik.imagekit.io/hbd8egryz/Smart%20INDIA%20Hackathon/Images%202/nervous-female-entrepreneur-giving-speech-with-microphone-holding-mic-looking-aside-anxiously-po.jpg?updatedAt=1702471415958') center/cover no-repeat;
             background-size: cover;
-            background-position: top;
             border-radius: 20px;
             box-shadow: 0px 0px 6px 0px black;
+            text-align: left;
+            padding: 20px; /* Add some padding for better readability */
+            position: relative;
         }
 
         .horizontal-scroll div:nth-child(4) p{
             text-align: start;
-            font-size: 1.5rem;
+            font-size: 1.8rem; /* Increase font size */
+            color: #fff; /* Set font color to white for better contrast */
+            font-weight: bold; /* Add bold style */
+            margin-bottom: 20px;
+            text-shadow: 4px 4px 8px rgba(0.5, 0, 0, 0.5); /* Add margin to separate from the button */
         }
 
         .horizontal-scroll div:nth-child(4) a{
             position: relative;
-            display: flex;
-            justify-content: center;
-            top: 72%;
+            display: inline-block; /* Change to inline-block for better centering */
+            padding: 10px 20px; /* Add padding to the button */
             background-color: #DC143C;
-            max-width: 200px;
-            margin: auto;
+            color: #fff; /* Set text color to white */
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .horizontal-scroll div:nth-child(4) a:hover {
+            background-color: #880808;
+        }
+
+        .horizontal-scroll div:nth-child(4)::before {
+            content: ''; /* Create a pseudo-element for the overlay */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
         }
 
 
@@ -376,21 +439,42 @@
             background-position: top;
             border-radius: 20px;
             box-shadow: 0px 0px 6px 0px black;
+            text-align: left;
+            padding: 20px; /* Add some padding for better readability */
+            position: relative;
         }
 
         .horizontal-scroll div:nth-child(5) p{
             text-align: start;
-            font-size: 1.5rem;
+            font-size: 1.8rem; /* Increase font size */
+            color: #fff; /* Set font color to white for better contrast */
+            font-weight: bold; /* Add bold style */
+            margin-bottom: 20px; /* Add margin to separate from the button */
         }
 
         .horizontal-scroll div:nth-child(5) a{
             position: relative;
-            display: flex;
-            justify-content: center;
-            top: 80%;
+            display: inline-block; /* Change to inline-block for better centering */
+            padding: 10px 20px; /* Add padding to the button */
             background-color: #DC143C;
-            max-width: 200px;
-            margin: auto;
+            color: #fff; /* Set text color to white */
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .horizontal-scroll div:nth-child(5) a:hover {
+            background-color: #880808;
+        }
+
+        .horizontal-scroll div:nth-child(5)::before {
+            content: ''; /* Create a pseudo-element for the overlay */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
         }
 
         .horizontal-scroll div:nth-child(6) {
@@ -398,22 +482,43 @@
             background-size: cover;
             border-radius: 20px;
             box-shadow: 0px 0px 6px 0px black;
+            text-align: left;
+            padding: 20px; /* Add some padding for better readability */
+            position: relative;
         }
         
 
         .horizontal-scroll div:nth-child(6) p{
             text-align: start;
-            font-size: 1.5rem;
+            font-size: 1.8rem; /* Increase font size */
+            color: #fff; /* Set font color to white for better contrast */
+            font-weight: bold; /* Add bold style */
+            margin-bottom: 20px; /* Add margin to separate from the button */
         }
 
         .horizontal-scroll div:nth-child(6) a{
             position: relative;
-            display: flex;
-            justify-content: center;
-            top: 80%;
+            display: inline-block; /* Change to inline-block for better centering */
+            padding: 10px 20px; /* Add padding to the button */
             background-color: #DC143C;
-            max-width: 200px;
-            margin: auto;
+            color: #fff; /* Set text color to white */
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .horizontal-scroll div:nth-child(6) a:hover {
+            background-color: #880808;
+        }
+
+        .horizontal-scroll div:nth-child(6)::before {
+            content: ''; /* Create a pseudo-element for the overlay */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
         }
 
         .horizontal-scroll div:nth-child(7) {
@@ -421,21 +526,42 @@
             background-size: cover;
             border-radius: 20px;
             box-shadow: 0px 0px 6px 0px black;
+            text-align: left;
+            padding: 20px; /* Add some padding for better readability */
+            position: relative;
         }
 
         .horizontal-scroll div:nth-child(7) p{
             text-align: start;
-            font-size: 1.5rem;
+            font-size: 1.8rem; /* Increase font size */
+            color: #fff; /* Set font color to white for better contrast */
+            font-weight: bold; /* Add bold style */
+            margin-bottom: 20px; /* Add margin to separate from the button */
         }
 
         .horizontal-scroll div:nth-child(7) a{
             position: relative;
-            display: flex;
-            justify-content: center;
-            top: 80%;
+            display: inline-block; /* Change to inline-block for better centering */
+            padding: 10px 20px; /* Add padding to the button */
             background-color: #DC143C;
-            max-width: 200px;
-            margin: auto;
+            color: #fff; /* Set text color to white */
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .horizontal-scroll div:nth-child(7) a:hover {
+            background-color: #880808;
+        }
+
+        .horizontal-scroll div:nth-child(7)::before {
+            content: ''; /* Create a pseudo-element for the overlay */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
         }
 
         .arrow-btn {
@@ -466,10 +592,10 @@
         .login-signup {
         position: absolute;
         bottom: 20px;
-        right: 20px;
+        right: 0%;
         display: flex;
+        align-items: stretch;
         flex-direction: column;
-        align-items: flex-end;
         opacity: 1; /* Initially visible */
         transition: opacity 0.5s ease;
         letter-spacing: 4px;
@@ -594,6 +720,7 @@
             }
 
             .login-signup {
+                width: 100%;
                 bottom: 20px;
                 right: 20px;
                 opacity: 1; /* Initially hidden */
@@ -685,7 +812,9 @@
                 <a href="#" class="bg-green-500 text-white px-4 py-2 rounded mt-4">Chat with experts</a>
             </div>
             <div class="fade-in">
-                <p>Want to share any peculiar experience that stands out but teaches something? Post your experience completely ANONYMOUSLY for it to be converted into a future episode.</p>
+                <p>Want to share any peculiar experience that stands out but teaches something?</p> 
+                <p>Post your experience completely ANONYMOUSLY for it to be converted into</p>
+                <p>a future episode.</p>
                 <a href="#" class="bg-green-500 text-white px-4 py-2 rounded mt-4">The Episode Forum</a>
             </div>
             <div class="fade-in">
@@ -752,4 +881,5 @@
 
 </body>
 </html>
+
 
