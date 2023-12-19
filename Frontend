@@ -20,7 +20,7 @@
         font-family: 'Saira Condensed', sans-serif;
         font-weight: 500;
         font-size: medium;
-        background-color: #DC143C;
+        background-color: #ff5274;
         color: white;
         position: fixed;
         width: 100%;
@@ -201,6 +201,10 @@
         position: absolute;
         top: 4%;
         left: 2%;
+        animation: fadeIn ease-in-out 1;
+        animation-fill-mode:backwards;
+        animation-duration: 1s;
+        animation-delay: 1s;
         mix-blend-mode: multiply;
         }
 
@@ -585,7 +589,7 @@
         }
 
          .big-button:hover {
-        background-color: #880808;
+        background-color: #ff5274;
         transform: scale(1.05); /* Slight scale effect on hover */
         }
 
@@ -767,6 +771,7 @@
                 <div></div>
             </div>
             <div class="nav-menu">
+                <a href="#" class="hover:text-green-500">HOME</a>
                 <a href="#" class="hover:text-green-500">GAME</a>
                 <a href="#" class="hover:text-green-500">REDEEM</a>
                 <a href="#" class="hover:text-green-500">TRACKER</a>
@@ -774,6 +779,7 @@
                 <a href="#" class="hover:text-green-500">EPISODE FORUM</a>
                 <a href="#" class="hover:text-green-500">CURATED PLAYLISTS</a>
                 <a href="#" class="hover:text-green-500">NEARBY STORES</a>
+                <a href="#" class="hover:text-green-500">UPCOMING EVENTS</a>
                 <a href="#" class="hover:text-green-500">ABOUT US</a>
             </div>
         </div>
@@ -878,8 +884,20 @@
         }
     });
 </script>
+<!-- Start of ChatBot (www.chatbot.com) code -->
+<script type="text/javascript">
+    window.__be = window.__be || {};
+    window.__be.id = "65815fbfa709620007b67179";
+    (function() {
+        var be = document.createElement('script'); be.type = 'text/javascript'; be.async = true;
+        be.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.chatbot.com/widget/plugin.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(be, s);
+    })();
+</script>
+<noscript>You need to <a href="https://www.chatbot.com/help/chat-widget/enable-javascript-in-your-browser/" rel="noopener nofollow">enable JavaScript</a> in order to use the AI chatbot tool powered by <a href="https://www.chatbot.com/" rel="noopener nofollow" target="_blank">ChatBot</a></noscript>
 
 </body>
 </html>
+
 
 
